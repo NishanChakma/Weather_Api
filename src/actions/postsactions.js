@@ -29,70 +29,70 @@ const exit_App = () => {
 };
 
 export const locationData = () => dispatch => {
-  // requestToLocationApi().then(res => {
-  //   console.log('11111', res);
-  //   if (res.Code == 'ServiceUnavailable') {
-  //     exit_App();
-  //   } else {
-  //     dispatch({
-  //       type: LOCATION_DATA,
-  //       payload: res,
-  //     });
-  //   }
-  // });
-  dispatch({
-    type: LOCATION_DATA,
-    payload: location,
+  requestToLocationApi().then(res => {
+    console.log('11111', res);
+    if (res.Code == 'ServiceUnavailable') {
+      exit_App();
+    } else {
+      dispatch({
+        type: LOCATION_DATA,
+        payload: res,
+      });
+    }
   });
+  // dispatch({
+  //   type: LOCATION_DATA,
+  //   payload: location,
+  // });
 };
 
 export const retriveDailyData = data => dispatch => {
-  // requestToWeatherApi(data).then(res => {
-  //   if (res.Code == 'ServiceUnavailable') {
-  //     exit_App();
-  //   } else {
-  //     dispatch({
-  //       type: RETRIVE_DATA,
-  //       payload: res,
-  //     });
-  //   }
-  // });
-  dispatch({
-    type: RETRIVE_DATA,
-    payload: oneDay,
+  requestToWeatherApi(data).then(res => {
+    if (res.Code == 'ServiceUnavailable') {
+      exit_App();
+    } else {
+      dispatch({
+        type: RETRIVE_DATA,
+        payload: res,
+      });
+    }
   });
+  // dispatch({
+  //   type: RETRIVE_DATA,
+  //   payload: oneDay,
+  // });
 };
 
 export const currentData = data => dispatch => {
-  // requestToCurrentWeatherApi(data).then(res => {
-  //   if (res.Code == 'ServiceUnavailable') {
-  //     exit_App();
-  //   } else {
-  //     dispatch({
-  //       type: CURRENT_WEATHER_DATA,
-  //       payload: res,
-  //     });
-  //   }
-  // });
-  dispatch({
-    type: CURRENT_WEATHER_DATA,
-    payload: current[0],
+  requestToCurrentWeatherApi(data).then(res => {
+    if (res.Code == 'ServiceUnavailable') {
+      exit_App();
+    } else {
+      dispatch({
+        type: CURRENT_WEATHER_DATA,
+        payload: res,
+      });
+    }
   });
+  // dispatch({
+  //   type: CURRENT_WEATHER_DATA,
+  //   payload: current[0],
+  // });
 };
 
 export const fiveDayData = data => dispatch => {
-  // requestTo5DayApi(data).then(res => {
-  //   if (res.Code == 'ServiceUnavailable') {
-  //     exitApp();
-  //   } else {
-  //     dispatch({
-  //       type: FIVE_DAY_DATA,
-  //       payload: res,
-  //     });
-  //   }
-  // });
-  dispatch({
-    type: FIVE_DAY_DATA,
-    payload: fiveDay,
+  requestTo5DayApi(data).then(res => {
+    if (res.Code == 'ServiceUnavailable') {
+      exitApp();
+    } else {
+      dispatch({
+        type: FIVE_DAY_DATA,
+        payload: res,
+      });
+    }
   });
+  // dispatch({
+  //   type: FIVE_DAY_DATA,
+  //   payload: fiveDay,
+  // });
 };
