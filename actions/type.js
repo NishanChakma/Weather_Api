@@ -1,4 +1,0 @@
-export const LOCATION_DATA = "LOCATION_DATA";
-export const RETRIVE_DATA = "RETRIVE_DATA";
-export const CURRENT_WEATHER_DATA = "CURRENT_WEATHER_DATA";
-export const FIVE_DAY_DATA = "FIVE_DAY_DATA";
