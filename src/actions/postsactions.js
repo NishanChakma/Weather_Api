@@ -12,11 +12,6 @@ import {
   requestTo5DayApi,
 } from '../api/apiHelper';
 
-import location from './cities';
-import oneDay from './today';
-import current from './current';
-import fiveDay from './fiveDay';
-
 import {BackHandler} from 'react-native';
 
 const exit_App = () => {
@@ -30,7 +25,6 @@ const exit_App = () => {
 
 export const locationData = () => dispatch => {
   requestToLocationApi().then(res => {
-    console.log('11111', res);
     if (res.Code == 'ServiceUnavailable') {
       exit_App();
     } else {
@@ -40,10 +34,6 @@ export const locationData = () => dispatch => {
       });
     }
   });
-  // dispatch({
-  //   type: LOCATION_DATA,
-  //   payload: location,
-  // });
 };
 
 export const retriveDailyData = data => dispatch => {
@@ -57,10 +47,6 @@ export const retriveDailyData = data => dispatch => {
       });
     }
   });
-  // dispatch({
-  //   type: RETRIVE_DATA,
-  //   payload: oneDay,
-  // });
 };
 
 export const currentData = data => dispatch => {
@@ -74,10 +60,6 @@ export const currentData = data => dispatch => {
       });
     }
   });
-  // dispatch({
-  //   type: CURRENT_WEATHER_DATA,
-  //   payload: current[0],
-  // });
 };
 
 export const fiveDayData = data => dispatch => {
@@ -91,8 +73,4 @@ export const fiveDayData = data => dispatch => {
       });
     }
   });
-  // dispatch({
-  //   type: FIVE_DAY_DATA,
-  //   payload: fiveDay,
-  // });
 };
